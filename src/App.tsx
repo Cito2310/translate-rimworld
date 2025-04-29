@@ -1,4 +1,4 @@
-import { StartProjectPage } from "./modules/startProject/page/startProjectPage";
+import { StartProjectPage } from "./modules/startProject/page/StartProjectPage"
 
 function App() {
   return (

@@ -1,15 +1,15 @@
 import { useReadFile } from "../hook/useReadFile"
 
 interface props {
-    funcSelectFile: (e: string) => void
+    onReadFile: (e: React.ChangeEvent<HTMLInputElement>) => null | undefined;
+    nameFile: string | null;
     idUnique: string;
     label: string;
     className?: string;
     textInput: string;
 }
 
-export const InputSelectFile = ({ funcSelectFile, idUnique, label, className, textInput }: props) => {
-    const [onReadFile, dataFile, nameFile] = useReadFile(funcSelectFile)
+export const InputSelectFile = ({ nameFile, onReadFile, idUnique, label, className, textInput }: props) => {
     return (
         <div className="flex items-center gap-3 text-[#ddd]">
             <label>{label}</label>
