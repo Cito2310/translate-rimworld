@@ -1,7 +1,8 @@
+import { DataTranslate } from "../../../core/types/dataTranslate";
 import { parseDefInjected } from "./parseDefInjected";
 import { parseKeyed } from "./parseKeyed";
 
-export const formatTextForCompare = (text:string) => {
+export const formatTextForCompare = (text:string): DataTranslate => {
     // 1. Primero divide todo el texto en sus lineas, que están partidas por "\r\n"
     const splitText = text.split("\r\n");
 
