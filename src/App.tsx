@@ -1,9 +1,10 @@
 import { StartProjectPage } from "./modules/startProject/page/StartProjectPage"
 
+
 function App() {
   return (
     <div className="App">
-      <StartProjectPage/>
+      <StartProjectPage />
       {/* <input type="file" onChange={onLoadExcludeData}/> */}
       {/* Hello World */}
     </div>
