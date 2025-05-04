@@ -3,4 +3,8 @@ export interface DefInjected {
     type: string;
     text: string;
     original: string;
+    isFirstType: boolean;
+    isFirstBase: boolean;
+    isFirstItem: boolean;
+    base: string;
 }

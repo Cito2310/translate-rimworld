@@ -26,7 +26,7 @@ export const formatTextForCompare = (text:string): DataTranslate => {
     const keyedRaw = textInArray[2].slice(1);
 
     // 4. Formatear las lineas de keyed y defInjected al formato establecido
-    const keyed = keyedRaw.map( parseKeyed)
+    const keyed = keyedRaw.map( parseKeyed )
     const defInjected = defInjectedRaw.map( parseDefInjected )
 
     return {
