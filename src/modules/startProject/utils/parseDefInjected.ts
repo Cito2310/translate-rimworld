@@ -12,6 +12,7 @@ export const parseDefInjected = (str: string, index: number, array: string[] ): 
     let isFirstBase = true;
     let isFirstType = true;
     const isFirstItem = index === 0;
+    console.log(str, index)
 
     // Verifica si no es el primer item
     if (index !== 0) {
