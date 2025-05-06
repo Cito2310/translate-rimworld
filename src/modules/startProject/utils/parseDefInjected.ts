@@ -4,6 +4,7 @@ import { DefInjected } from "../../../core/types/defInjected";
 // Ejemplo de defInjected: ApparelLayerDef: VFEC_OuterShell.label 'on top'
 export const parseDefInjected = (str: string, index: number, array: string[] ): DefInjected => {
     const type = str.match(/[A-Za-z0-9]+/)![0];
+    // const name = str.match(/: [A-Za-z0-9._\-]+/)![0].slice(2).split(".").slice(1).join(".");
     const name = str.match(/: [A-Za-z0-9._\-]+/)![0].slice(2);
     const text = str.match(/[\'\"].+[\'\"]/)![0].slice(1, -1);
     const base = name.match( /[a-zA-Z0-9_]+/ )![0];
