@@ -1,8 +1,6 @@
-import { DataTranslate } from "../../../core/types/dataTranslate";
-import { parseDefInjected } from "./parseDefInjected";
-import { parseKeyed } from "./parseKeyed";
+import { DataToCompare } from "../../../core/types/dataToCompare";
 
-export const formatTextForCompare = (text:string): DataTranslate => {
+export const formatTextForCompare = (text:string): DataToCompare => {
     // 1. Primero divide todo el texto en sus lineas, que están partidas por "\r\n"
     const splitText = text.split("\r\n");
 
@@ -24,13 +22,8 @@ export const formatTextForCompare = (text:string): DataTranslate => {
     // El slice(1) elimina la primera linea del array, que es solamente el titulo del segmento
     const defInjectedRaw = textInArray[3].slice(1);
     const keyedRaw = textInArray[2].slice(1);
-
-    // 4. Formatear las lineas de keyed y defInjected al formato establecido
-    const keyed = keyedRaw.map( parseKeyed )
-    const defInjected = defInjectedRaw.map( parseDefInjected )
-
     return {
-        keyed,
-        defInjected
-    };
+        defInjected: defInjectedRaw,
+        keyed: keyedRaw,
+    }
 }
