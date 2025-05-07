@@ -38,11 +38,20 @@ export const currentProjectSlice = createSlice({
             state.existData = true;
         },
 
+        toggleCompleteWithName: ( state, action: { payload: { name: string, type: "keyed" | "defInjected" } } ) => {
+            const findElement = state.data[action.payload.type].find( item => item.name === action.payload.name );
+            
+            if (!findElement) throw new Error("No se encontro el efecto");
+
+            findElement.isComplete = !findElement.isComplete
+        }
+
     }
 });
 
 export const { 
     setCurrentProject,
     changeName,
+    toggleCompleteWithName
 
 } = currentProjectSlice.actions;

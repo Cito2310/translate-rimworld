@@ -3,6 +3,7 @@ import { Keyed } from "../../../core/types/keyed";
 import { DefInjected } from "../../../core/types/defInjected";
 import { TitleTranslate } from "./TitleTranslate";
 import TextareaAutosize from 'react-textarea-autosize';
+import { ContainerDefInjected } from "./ContainerDefInjected";
 
 interface props {
     register: UseFormRegister<{values: (Keyed | DefInjected)[]}>
@@ -29,21 +30,7 @@ export const ItemListDefInjected = ({ data, index, register, control }: props) =
 
 
             {/* PARTE DONDE ESTAN CADA UNO DE LOS TEXTOS A TRADUCIR */}
-            <label>{name.split(".").slice(1).join(".")}</label>
-
-            <Controller
-            name={`values.${index}.text`}
-            control={control}
-            render={({ field }) => (
-              <TextareaAutosize
-                {...field}
-                minRows={1}
-                maxRows={10}
-                className="outline-none w-[100%] rounded px-1.5 py-.5 bg-[#363636]"
-              />
-            )}
-          />
-
+            <ContainerDefInjected control={control} data={data} index={index} />
         </li>
     )
 }

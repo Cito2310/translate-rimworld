@@ -7,4 +7,5 @@ export interface DefInjected {
     isFirstBase: boolean;
     isFirstItem: boolean;
     base: string;
+    isComplete?: boolean;
 }

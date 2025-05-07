@@ -3,4 +3,5 @@ export interface Keyed {
     text: string;
     original: string;
     isFirstItem: boolean;
+    isComplete?: boolean;
 }
