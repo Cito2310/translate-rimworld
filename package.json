@@ -19,6 +19,7 @@
     "react-hook-form": "^7.56.1",
     "react-redux": "^9.2.0",
     "react-textarea-autosize": "^8.5.9",
+    "react-virtuoso": "^4.12.7",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

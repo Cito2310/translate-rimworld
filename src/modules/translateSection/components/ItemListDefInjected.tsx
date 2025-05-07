@@ -16,7 +16,7 @@ export const ItemListDefInjected = ({ data, index, register, control }: props) =
     const { base, isFirstBase, isFirstItem, isFirstType, name, original, text, type } = data;
 
     return (
-        <li className="text-[#ddd] list-none">
+        <li className="text-[#ddd] list-none mx-5">
             {/* PARTE PARA AÑADIR EL TITULO DEFINJECTED */}
             {isFirstItem ? <TitleTranslate label="DefInjected" type="title" /> : null}
 
