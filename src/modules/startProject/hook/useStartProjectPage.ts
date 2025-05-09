@@ -6,6 +6,7 @@ import { compareDataTranslateAndParse } from "../utils/compareDataTranslateAndPa
 import { useAppDispatch } from "../../../core/store/store";
 import { setCurrentProject } from "../../../core/store/currentProject/currentProjectSlice";
 import { DataToCompare } from "../../../core/types/dataToCompare";
+import { localStorageController } from "../../../core/storage/localStorageController";
 
 interface stateDataToTranslate { 
     translate: DataToCompare | null;
@@ -34,10 +35,10 @@ export const useStartProjectPage = () => {
         const comparedData = compareDataTranslateAndParse(dataToTranslate);
         const nameProject = getValues("nameProject");
 
-        dispatch(setCurrentProject({
-            data: comparedData,
-            name: nameProject,
-        }))
+
+        const newProject = { data: comparedData, name: nameProject }
+        localStorageController.set("current-project", newProject)
+        dispatch(setCurrentProject(newProject))
     }
 
     
