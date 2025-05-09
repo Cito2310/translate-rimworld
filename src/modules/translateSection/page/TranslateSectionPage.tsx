@@ -5,7 +5,7 @@ import { useTranslateSection } from "../hook/useTranslateSection"
 
 export const TranslateSectionPage = () => {
     const { control, register, joinedData } = useTranslateSection();
-    console.log(joinedData)
+
     return (
         <div className="h-screen">
             <Virtuoso
@@ -21,6 +21,7 @@ export const TranslateSectionPage = () => {
                         data={data} index={index} register={register} />
                 }}
                 components={{
+                    Header: () => <div style={{ height: "32px" }}/>,
                     Footer: () => <div style={{ height: '50px' }} />
                 }}
             />
