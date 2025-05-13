@@ -32,10 +32,21 @@ export const currentProjectSlice = createSlice({
             state.name = action.payload;
         },
 
-        setCurrentProject: ( state, action: { payload: { data: { keyed: Keyed[]; defInjected: DefInjected[] }, name: string } } ) => {
+        setNotProject: ( state ) => {
+            state.data = { keyed: [], defInjected: [] }
+            state.name = ""
+            state.existData = false
+        },
+
+        setCurrentProject: ( state, action: { payload: { 
+            data: { keyed: Keyed[]; defInjected: DefInjected[] }, 
+            name: string,
+            lastSave?: number
+        } } ) => {
             state.name = action.payload.name;
             state.data = action.payload.data;
             state.existData = true;
+            if (action.payload.lastSave) state.lastSave = action.payload.lastSave            
         },
 
         toggleCompleteWithName: ( state, action: { payload: { name: string, type: "keyed" | "defInjected" } } ) => {
@@ -52,6 +63,7 @@ export const currentProjectSlice = createSlice({
 export const { 
     setCurrentProject,
     changeName,
-    toggleCompleteWithName
+    toggleCompleteWithName,
+    setNotProject
 
 } = currentProjectSlice.actions;
